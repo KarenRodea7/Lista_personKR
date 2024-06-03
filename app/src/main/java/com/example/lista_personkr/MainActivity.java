@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +15,15 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
+    int sum = 0;
+    TextView total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        total = findViewById(R.id.Total);
 
         listView=(ListView)findViewById(R.id.ListaP);
         String[] nombres={"Durazno","Fresa","Mango","Manzana","Piña"};
@@ -30,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (sum >= 0){
+                    sum = sum + Integer.parseInt(precios[position]);
+                }
+                total.setText("Total" +sum);
 
             }
         });
@@ -37,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                return false;
+                if (sum >0){
+                    sum = sum - Integer.parseInt(precios[position]);
+                }
+                total.setText("Total: " +sum);
+                return true;
             }
         });
     }
