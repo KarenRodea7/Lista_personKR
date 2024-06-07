@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (sum >= 0){
-                    sum = sum + Integer.parseInt(precios[position]);
-                }
+                sum = sum + Integer.parseInt(precios[position]);
                 total.setText("Total" +sum);
 
             }
@@ -46,9 +44,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                if (sum >0){
-                    sum = sum - Integer.parseInt(precios[position]);
-                }
+                sum = sum - Integer.parseInt(precios[position]);
                 total.setText("Total: " +sum);
                 return true;
             }
