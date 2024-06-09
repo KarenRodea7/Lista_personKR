@@ -27,7 +27,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nombre:   "/>
+                    android:text="@string/Nombre"/>
                 <TextView
                     android:id="@+id/nombre"
                     android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Precio:  $"/>
+                    android:text="@string/Precio"/>
                 <TextView
                     android:id="@+id/precio"
                     android:layout_width="wrap_content"

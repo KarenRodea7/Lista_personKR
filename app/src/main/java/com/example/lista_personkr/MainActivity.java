@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         listView=(ListView)findViewById(R.id.ListaP);
         String[] nombres={"Durazno","Fresa","Mango","Manzana","Piña"};
-        String[] precios ={"40","50","30","70","90"};
+        String[] precios ={"30","40","35","20","55"};
         Integer[]  imagen= {R.drawable.durazno, R.drawable.fresa, R.drawable.mango, R.drawable.manzana, R.drawable.pi_a};
         AdapterList adapter = new AdapterList(this, nombres, precios, imagen);
         listView.setAdapter(adapter);
